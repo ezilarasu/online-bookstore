@@ -20,10 +20,8 @@ public class RepositoryConfig implements RepositoryRestConfigurer{
 
 	public void configureRepositoryRestConfiguration(RepositoryRestConfiguration config) {
 		
-//		config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream()
-//				.map(Type :: getJavaType).toArray(Class[]:: new));
-		Class []arr = { Book.class , BookCategory.class};
-		config.exposeIdsFor(arr);
+	config.exposeIdsFor(entityManager.getMetamodel().getEntities().stream()
+			.map(Type :: getJavaType).toArray(Class[]:: new));
 		
 	}
 	
